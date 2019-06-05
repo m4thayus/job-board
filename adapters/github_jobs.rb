@@ -26,4 +26,5 @@
         end
     end
     
-#puts GitHubJobs.new.fetch_jobs
+#jobs = GitHubJobs.new.fetch_jobs
+#binding.pry
