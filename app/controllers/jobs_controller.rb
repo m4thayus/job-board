@@ -29,6 +29,12 @@ class JobsController < Sinatra::Base
 
         redirect "/jobs/#{@job.id}"
     end
+
+    get '/jobs/:id' do
+        @job = Job.find_by_id(params[:id])
+        erb :show
+    end
+    
     
     
     
