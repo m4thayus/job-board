@@ -7,6 +7,29 @@ class JobsController < Sinatra::Base
         @jobs = Job.all
         erb :index
     end
+
+    get '/jobs/new' do
+        @companies = Company.all
+        erb :new
+    end
+    
+    post '/jobs' do
+        if !params[:new_company].empty?
+            company = Company.find_or_create_by(name: params[:new_company])
+        else
+            company = Company.find_by_id(params[:company_id])
+        end
+
+        @job = Job.create(
+            title: params[:title], 
+            location: params[:location], 
+            description: params[:description],
+            company_id: company.id
+        )
+
+        redirect "/jobs/#{@job.id}"
+    end
+    
     
     
 end

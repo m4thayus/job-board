@@ -1,0 +1,28 @@
+<style>
+    label {display: block;}
+    input, textarea, select {margin-bottom: 1em;}
+</style>
+
+<h1>Post A New Job:</h1>
+<form action="/jobs" method="post">
+    <label for="title">Job Title: </label>
+    <input type="text" name="title" id="title">
+    <br>
+    <label for="location">Location: </label>
+    <input type="text" name="location" id="location">
+    <br>
+    <label for="description">Description: </label>
+    <textarea id="description" name="description" rows="5" cols="80" 
+    placeholder="Give a brief description of the job..."></textarea>
+    <br>
+    <label for="company_id">Choose an Existing Company: </label>
+    <select name="company_id">
+        <option disabled selected value=>--select a company--</option>
+        <%@companies.each do |company| %>
+            <option value="<%=company.id%>"><%=company.name%></option>
+        <%end%>
+    </select>
+    <label for="new_company">or Enter your Company's Name:</label>
+    <input type="text" name="new_company" id="new_company">
+    <input type="submit" value="Submit">
+</form>
