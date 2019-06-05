@@ -6,7 +6,11 @@
 
 <%=@job.description%>
 
-<form action="<%="/jobs/#{@job.id}"%>" method="POST">
+<form action="/jobs/<%=@job.id%>/edit" method="get">
+    <input type="submit" value="Edit This Job">
+</form>
+
+<form action="/jobs/<%=@job.id%>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete This Job">
 </form>

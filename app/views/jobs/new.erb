@@ -17,7 +17,7 @@
     <br>
     <label for="company_id">Choose an Existing Company: </label>
     <select name="company_id">
-        <option disabled selected value=>--select a company--</option>
+        <option disabled selected> -- select a company -- </option>
         <%@companies.each do |company| %>
             <option value="<%=company.id%>"><%=company.name%></option>
         <%end%>
