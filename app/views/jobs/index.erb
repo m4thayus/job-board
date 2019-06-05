@@ -1,5 +1,9 @@
 <h1>GitHub Jobs</h1>
 
+<form style="position: fixed; top: 2em; right: 2em;" action="/jobs/new" method="get">
+    <input type="submit" value="Post a New Job">
+</form>
+
 <%@jobs.each do |job|%>
     <h2><a href="/jobs/<%=job.id%>"><%=job.title%></a></h2>
     <h3><%=job.company.name%> | <%=job.location%></h3>
