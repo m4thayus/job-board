@@ -34,6 +34,13 @@ class JobsController < Sinatra::Base
         @job = Job.find_by_id(params[:id])
         erb :show
     end
+
+    delete '/jobs/:id' do
+        @job = Job.find_by_id(params[:id])
+        @job.delete
+        redirect '/jobs'
+    end
+    
     
     
     
