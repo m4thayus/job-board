@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_05_181036) do
+ActiveRecord::Schema.define(version: 2019_06_05_184644) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.string "location"
   end
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.string "location"
   end
 
 end
