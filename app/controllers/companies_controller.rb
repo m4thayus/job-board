@@ -1,4 +1,5 @@
 class CompaniesController < Sinatra::Base
+
     set :views, "app/views/companies"
     set :method_override, true
 
