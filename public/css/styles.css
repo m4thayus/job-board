@@ -1,0 +1,13 @@
+label {
+  display: block;
+}
+input, textarea, select {
+  margin-bottom: 1em;
+}
+form {
+  display: inline-block;
+}
+.form-container {
+    display: block; 
+    margin-top: 1em;
+}

@@ -2,15 +2,16 @@ class JobsController < Sinatra::Base
 
     set :views, "app/views/jobs"
     set :method_override, true
+    layout = :'../layout'
 
     get '/jobs' do
         @jobs = Job.all
-        erb :index
+        erb :index, :layout => layout
     end
 
     get '/jobs/new' do
         @companies = Company.all
-        erb :new
+        erb :new, :layout => layout
     end
     
     post '/jobs' do
@@ -32,13 +33,13 @@ class JobsController < Sinatra::Base
 
     get '/jobs/:id' do
         @job = Job.find_by_id(params[:id])
-        erb :show
+        erb :show, :layout => layout
     end
 
     get '/jobs/:id/edit' do
         @companies = Company.all
         @job = Job.find_by_id(params[:id])
-        erb :edit
+        erb :edit, :layout => layout
     end
     
     patch '/jobs/:id' do

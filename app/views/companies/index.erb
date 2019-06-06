@@ -1,7 +1,15 @@
-<h1>GitHub Jobs</h1>
+<a href="/jobs">&laquo; Search all Jobs</a>
 
-<ul>
-    <%@companies.each do |company|%>    
-        <li><%=company.name%></li>
-    <%end%>
-</ul>
+<h1>Companies</h1>
+
+<form style="position: fixed; top: 2em; right: 2em;" action="/companies/new" method="get">
+    <input type="submit" value="Add a New Company">
+</form>
+
+<%@companies.each_with_index do |company, index|%>    
+	<h2><%= index+1 %>. 
+		<a href="/companies/<%= company.id %>">
+			<%= company.name %>
+		</a>
+	</h2>
+<%end%>

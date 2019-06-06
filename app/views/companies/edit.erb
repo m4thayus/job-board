@@ -1,0 +1,14 @@
+<a href="/companies/<%= @company.id %>">&laquo; Back to <%= @company.name %></a>
+
+<h1>Edit this Company</h1>
+
+<form action="<%="/companies/#{@company.id}"%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <label for="name">Name: </label>
+  <input type="text" name="name" id="name" value=" <%= @company.name %>">
+  <input type="submit" value="Submit">
+</form>
+
+<form action="/companies/<%= @company.id %>" method="get">
+    <input type="submit" value="Cancel Edit">
+</form>

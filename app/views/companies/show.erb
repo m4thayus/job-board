@@ -1,0 +1,26 @@
+<a href="/companies">&laquo; Back to Companies</a>
+
+<h1><%= @company.name %></h1>
+<hr>
+
+<% @company.jobs.each_with_index do |job, index| %>
+  <h2><%= index + 1 %>. <a href="/jobs/<%= job.id %>"><%= job.title %></a></h2>
+  <h3><%= job.location %></h3>
+  <%=job.description.split.slice(0, 50).join(' ').concat("...")%>
+<% end %>
+
+<div class="form-container">
+  <form action="/jobs/new" method="get">
+    <input type="submit" value="Add New Job">
+  </form>
+
+  <form action="/companies/<%=@company.id%>/edit" method="get">
+    <input type="submit" value="Edit This Company">
+  </form>
+
+  <form action="/companies/<%=@company.id%>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete This Company">
+  </form>
+</div>
+

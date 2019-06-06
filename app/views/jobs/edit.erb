@@ -1,11 +1,6 @@
-<style>
-    label {display: block;}
-    input, textarea, select {margin-bottom: 1em;}
-</style>
-
 <a href="/jobs/<%=@job.id%>">&laquo; Back to Job Post</a>
 
-<h1>Edit This Job:</h1>
+<h1>Edit this Job:</h1>
 <form action="<%="/jobs/#{@job.id}"%>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="PATCH">
     <label for="title">Job Title: </label>

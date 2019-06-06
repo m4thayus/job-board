@@ -1,18 +1,9 @@
-<style>
-    label {display: block;}
-    input, textarea, select {margin-bottom: 1em;}
-    form {display: inline-block;}
-    .form-container {
-        display: block; 
-        margin-top: 1em;
-        }
-</style>
-
 <a href="/jobs">&laquo; Back to Job Listings</a>
 
 <h1><%=@job.title%></h1>
 
 <h2><%=@job.company.name%> | <%=@job.location%></h2>
+<a href="/companies/<%= @job.company.id %>">See all Jobs at <%= @job.company.name %></a>
 
 <%=@job.description%>
 
