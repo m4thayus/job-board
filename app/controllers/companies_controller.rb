@@ -31,7 +31,7 @@ class CompaniesController < Sinatra::Base
     
     patch '/companies/:id' do
         @company = Company.find_by_id(params[:id])
-        Company.update(
+        @company.update(
             name: params[:name]
         )
         redirect "/companies/#{@company.id}"
