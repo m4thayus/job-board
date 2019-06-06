@@ -4,7 +4,9 @@ class ApplicationController < Sinatra::Base
     set :method_override, true
 
     get '/' do
-        redirect "/jobs"
+        @jobs = Job.all
+        @companies = Company.all
+        erb :home
     end
     
 end
