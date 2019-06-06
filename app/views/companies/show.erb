@@ -1,3 +1,13 @@
+<style>
+    label {display: block;}
+    input, textarea, select {margin-bottom: 1em;}
+    form {display: inline-block;}
+    .form-container {
+        display: block; 
+        margin-top: 1em;
+        }
+</style>
+
 <a href="/companies">&laquo; Back to Companies</a>
 
 <h1><%=@company.name%></h1>
@@ -8,3 +18,14 @@
     <h3><%= job.location %></h3>
     <%=job.description.split.slice(0, 50).join(' ').concat("...")%>
 <% end %>
+
+<div class="form-container">
+    <form action="/companies/<%=@company.id%>/edit" method="get">
+        <input type="submit" value="Edit Your Company">
+    </form>
+
+    <form action="/companies/<%=@company.id%>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Your Company">
+    </form>
+</div>

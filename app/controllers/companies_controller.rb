@@ -39,6 +39,9 @@ class CompaniesController < Sinatra::Base
 
     delete '/companies/:id' do
         @company = Company.find_by_id(params[:id])
+        @company.jobs.each do |job|
+            job.delete
+        end
         @company.delete
         redirect '/companies'
     end
