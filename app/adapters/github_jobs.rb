@@ -1,4 +1,6 @@
-    require_relative '../config/environment.rb'
+require_relative '../../config/environment.rb'
+
+module GitHubJobs
 
     class Search
 
@@ -9,7 +11,7 @@
         end
     end
 
-    class GitHubJobs
+    class Adapter
         BASE_URL = "https://jobs.github.com/positions.json?"
 
         SEARCH = Search.new("ruby", "new+york")
@@ -25,6 +27,7 @@
             "#{BASE_URL}description=#{search.description}&location=#{search.location}"
         end
     end
-    
+
+end
 #jobs = GitHubJobs.new.fetch_jobs
 #binding.pry
