@@ -1,5 +1,9 @@
 <h1>GitHub Jobs</h1>
 
+<form style="position: fixed; top: 2em; right: 2em;" action="/companies/new" method="get">
+    <input type="submit" value="Add Your Company">
+</form>
+
 <%@companies.each_with_index do |company, i|%>    
     <h2><%="#{i+1}. "%><a href="/companies/<%=company.id%>"><%=company.name%></a></h2>
 <%end%>
