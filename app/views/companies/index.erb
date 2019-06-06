@@ -1,7 +1,5 @@
 <h1>GitHub Jobs</h1>
 
-<ul>
-    <%@companies.each do |company|%>    
-        <li><%=company.name%></li>
-    <%end%>
-</ul>
+<%@companies.each_with_index do |company, i|%>    
+    <h2><%="#{i+1}. "%><a href="/companies/<%=company.id%>"><%=company.name%></a></h2>
+<%end%>

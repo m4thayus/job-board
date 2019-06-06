@@ -1,0 +1,10 @@
+<a href="/companies">&laquo; Back to Companies</a>
+
+<h1><%=@company.name%></h1>
+
+<% @company.jobs.each_with_index do |job, i| %>
+    <hr>
+    <h2><%="#{i + 1}. "%><a href="/jobs/<%=job.id%>"><%= job.title %></a></h2>
+    <h3><%= job.location %></h3>
+    <%=job.description.split.slice(0, 50).join(' ').concat("...")%>
+<% end %>

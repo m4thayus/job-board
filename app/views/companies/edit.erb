@@ -1,0 +1,14 @@
+<style>
+    label, a {display: block;}
+    input, a {margin-bottom: 1em;}
+</style>
+
+<a href="/companies/<%=@company.id%>">&laquo; Back to <%=@company.name%></a>
+
+
+<form action="/companies/<%=@company.id%>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="PATCH">
+    <label for="name">Company Name:</label>
+    <input type="text" name="name" id="name" value="<%=@company.name%>">
+    <input type="submit" value="Submit">
+</form>

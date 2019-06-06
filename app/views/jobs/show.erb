@@ -14,6 +14,8 @@
 
 <h2><%=@job.company.name%> | <%=@job.location%></h2>
 
+<a href="/companies/<%=@job.company.id%>"">See all Jobs at <%=@job.company.name%></a>
+
 <%=@job.description%>
 
 <div class="form-container">
